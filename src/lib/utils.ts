@@ -4,6 +4,7 @@ import { twMerge } from "tailwind-merge";
 import nookies from "nookies";
 
 const development = "http://localhost:3333";
+const production = "https://ia.isaquesestudios.com"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -12,7 +13,7 @@ export function cn(...inputs: ClassValue[]) {
 const { token } = nookies.get();
 
 export const api = axios.create({
-  baseURL: development,
+  baseURL: production,
   headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
